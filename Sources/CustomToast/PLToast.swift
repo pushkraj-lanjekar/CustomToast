@@ -8,14 +8,14 @@
 import Foundation
 import SwiftUI
 
-enum PLToastStyle {
+public enum PLToastStyle {
     case error
     case warning
     case success
     case info
 }
 
-extension PLToastStyle {
+public extension PLToastStyle {
     @available(iOS 13.0, *)
     var themeColor: Color {
         switch self {
@@ -37,10 +37,10 @@ extension PLToastStyle {
 }
 
 public struct PLToastView: View {
-    var type: PLToastStyle
-    var title: String
-    var message: String
-    var onCancelTapped: (() -> Void)
+    public var type: PLToastStyle
+    public var title: String
+    public var message: String
+    public var onCancelTapped: (() -> Void)
     @available(iOS 13.0.0, *)
     public var body: some View {
         VStack(alignment: .leading) {
