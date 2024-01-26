@@ -37,10 +37,22 @@ public extension PLToastStyle {
 }
 
 public struct PLToastView: View {
-    public var type: PLToastStyle
-    public var title: String
-    public var message: String
-    public var onCancelTapped: (() -> Void)
+    
+    private var type: PLToastStyle
+    private var title: String
+    private var message: String
+    private var onCancelTapped: (() -> Void)
+    
+    public init(type: PLToastStyle,
+                  title: String,
+                  message: String,
+                  onCancelTapped: @escaping (() -> Void)) {
+        self.type = type
+        self.title = title
+        self.message = message
+        self.onCancelTapped = onCancelTapped
+    }
+    
     @available(iOS 13.0.0, *)
     public var body: some View {
         VStack(alignment: .leading) {
